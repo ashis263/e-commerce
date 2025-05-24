@@ -1,3 +1,4 @@
+import Button from "../../../../../ui/Button/Button";
 import ProductPrice from "../../../../../ui/ProductPrice/ProductPrice";
 import ProductTitle from "../../../../../ui/SectionHeading/ProductTitle/ProductTitle";
 
@@ -34,18 +35,9 @@ const Product = ({ product }) => {
           <span className="text-xs text-gray-700">{`(${totalStock} pcs left)`}</span>
         </div>
         <ProductPrice price={price} />
-        <button className="w-full mt-2 bg-red-800 py-1 text-gray-100 rounded flex items-center justify-center">
-          Remove from Cart
-        </button>
-        {/* <button className="disabled:bg-gray-700 disabled:text-gray-400 disabled:cursor-not-allowed w-full mt-2 bg-gray-800 py-1 text-gray-100 rounded flex items-center justify-center active:translate-y-1 transition-all active:bg-gray-900">
-          Add to Cart
-        </button>
-        <button
-          disabled=""
-          className="disabled:bg-gray-700 disabled:text-gray-400 disabled:cursor-not-allowed disabled:bg-gray-700 disabled:text-gray-400 disabled:cursor-not-allowed w-full mt-2 bg-gray-800 py-1 text-gray-100 rounded flex items-center justify-center active:translate-y-1 transition-all active:bg-gray-900 active:translate-y-1 transition-all active:bg-gray-900"
-        >
-          Add to Cart
-        </button> */}
+        <Button variant="primary" content="Add to cart" />
+        {/* <Button variant="primary" content="Add to cart" disabled/>
+        <Button variant="secondary" content="Remove from Cart"/> */}
       </div>
     </div>
   );

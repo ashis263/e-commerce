@@ -1,6 +1,14 @@
 //will be modified dynamically
 
+import Button from "../../../../../ui/Button/Button";
+
 const OrderSummary = () => {
+  const checkoutLink = (
+    <a href="#">
+      Go to Checkout
+      <span className="inline-block ml-2">→</span>
+    </a>
+  );
   return (
     <div>
       <div className="mt-6">
@@ -48,18 +56,10 @@ const OrderSummary = () => {
               </svg>
             </span>
           </div>
-          <button className="bg-black text-white rounded-md px-4 py-2 text-sm">
-            Apply
-          </button>
+          <Button variant="coupon" content="Apply" />
         </div>
         {/* Checkout Button */}
-        <a
-          href="#"
-          className="block bg-black text-white text-center py-3 rounded-md hover:bg-gray-800 transition-colors"
-        >
-          Go to Checkout
-          <span className="inline-block ml-2">→</span>
-        </a>
+        <Button variant="checkout" content={checkoutLink} />
       </div>
     </div>
   );
