@@ -2,22 +2,49 @@ import { useState } from "react";
 import Button from "../../../../../ui/Button/Button";
 import ProductPrice from "../../../../../ui/ProductPrice/ProductPrice";
 import ProductTitle from "../../../../../ui/SectionHeading/ProductTitle/ProductTitle";
+import Rating from "../Rating/Rating";
+import {
+  useCart,
+  useCartDispatch,
+} from "../../../../../../contexts/CartContext";
+import { useProductsDispatch } from "../../../../../../contexts/ProductsContext";
 
 const Product = ({ product }) => {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
-  const { title, image, rating, price, totalStock } = product;
 
-  //making an array of rating to dynamically render yello star
-  const ratingArr = [];
-  for (let i = 0; i < rating; i++) {
-    ratingArr.push({ id: i + 1, isRated: true });
-  }
-  for (let i = 0; i < 5 - rating; i++) {
-    ratingArr.push({ id: ratingArr.length + 1, isRated: false });
-  }
+  const cart = useCart();
+  const cartDispatch = useCartDispatch();
+  const productsDispatch = useProductsDispatch();
+
+  const { id, title, image, rating, price, totalStock } = product;
 
   const handleClick = () => {
     setIsAddedToCart(!isAddedToCart);
+    if (!isAddedToCart) {
+      cartDispatch({
+        type: "added",
+        product: { ...product, quantity: 1 },
+      });
+      productsDispatch({
+        type: "changed",
+        product: {
+          ...product,
+          totalStock: totalStock - 1,
+        },
+      });
+    } else {
+      cartDispatch({
+        type: "removed",
+        productId: id,
+      });
+      productsDispatch({
+        type: "changed",
+        product: {
+          ...product,
+          totalStock: cart.find((c) => c.id === id).totalStock,
+        },
+      });
+    }
   };
 
   return (
@@ -28,19 +55,7 @@ const Product = ({ product }) => {
       <div className="p-4">
         <ProductTitle text={title} />
         <div className="flex items-center justify-between">
-          <div className="flex items-center my-1">
-            <div className="flex text-yellow-400">
-              {ratingArr.map((r) => (
-                <span
-                  key={r.id}
-                  className={`${r.isRated ? "" : "text-gray-300"}`}
-                >
-                  ★
-                </span>
-              ))}
-            </div>
-            <span className="text-xs text-gray-500 ml-1">{rating}/5</span>
-          </div>
+          <Rating rating={rating} />
           <span className="text-xs text-gray-700">{`(${totalStock} pcs left)`}</span>
         </div>
         <ProductPrice price={price} />
