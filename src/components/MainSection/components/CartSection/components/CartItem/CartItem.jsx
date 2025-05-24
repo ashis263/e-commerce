@@ -1,8 +1,63 @@
+import {
+  useCart,
+  useCartDispatch,
+} from "../../../../../../contexts/CartContext";
+import {
+  useProducts,
+  useProductsDispatch,
+} from "../../../../../../contexts/ProductsContext";
+import Button from "../../../../../ui/Button/Button";
 import ProductPrice from "../../../../../ui/ProductPrice/ProductPrice";
 import ProductTitle from "../../../../../ui/SectionHeading/ProductTitle/ProductTitle";
 
 const CartItem = ({ item }) => {
-  const { title, image, price, quantity } = item;
+  const cart = useCart();
+  const cartDispatch = useCartDispatch();
+  const products = useProducts();
+  const productsDispatch = useProductsDispatch();
+
+  const { productId, title, image, price, quantity } = item;
+
+  const product = products.find((p) => p.id === productId);
+  const initialStock = cart.find((c) => c.productId === productId).totalStock;
+
+  const handleIncrement = () => {
+    if (quantity < initialStock) {
+      cartDispatch({
+        type: "changed",
+        product: {
+          ...item,
+          quantity: quantity + 1,
+        },
+      });
+      productsDispatch({
+        type: "changed",
+        product: {
+          ...product,
+          totalStock: product.totalStock - 1,
+        },
+      });
+    }
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      cartDispatch({
+        type: "changed",
+        product: {
+          ...item,
+          quantity: quantity - 1,
+        },
+      });
+      productsDispatch({
+        type: "changed",
+        product: {
+          ...product,
+          totalStock: product.totalStock + 1,
+        },
+      });
+    }
+  };
 
   return (
     <div className="flex items-start space-x-4 pb-4 border-b border-gray-200 mb-4">
@@ -20,13 +75,17 @@ const CartItem = ({ item }) => {
         <div className="flex justify-between items-center mt-2">
           <ProductPrice price={quantity * price} />
           <div className="flex items-center space-x-2">
-            <button className="w-6 h-6 bg-gray-100 rounded flex items-center justify-center">
-              −
-            </button>
+            <Button
+              variant="cart-quantity"
+              clickHander={handleDecrement}
+              content="-"
+            />
             <span className="text-sm">{quantity}</span>
-            <button className="w-6 h-6 bg-gray-100 rounded flex items-center justify-center">
-              +
-            </button>
+            <Button
+              variant="cart-quantity"
+              clickHander={handleIncrement}
+              content="+"
+            />
           </div>
         </div>
       </div>

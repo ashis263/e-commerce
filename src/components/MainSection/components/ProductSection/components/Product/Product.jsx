@@ -8,6 +8,7 @@ import {
   useCartDispatch,
 } from "../../../../../../contexts/CartContext";
 import { useProductsDispatch } from "../../../../../../contexts/ProductsContext";
+import findNextId from "../../../../../../utils/findNextId";
 
 const Product = ({ product }) => {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
@@ -23,7 +24,12 @@ const Product = ({ product }) => {
     if (!isAddedToCart) {
       cartDispatch({
         type: "added",
-        product: { ...product, quantity: 1 },
+        product: {
+          ...product,
+          id: findNextId(cart),
+          productId: id,
+          quantity: 1,
+        },
       });
       productsDispatch({
         type: "changed",
@@ -41,7 +47,7 @@ const Product = ({ product }) => {
         type: "changed",
         product: {
           ...product,
-          totalStock: cart.find((c) => c.id === id).totalStock,
+          totalStock: cart.find((c) => c.productId === id).totalStock,
         },
       });
     }
@@ -63,7 +69,7 @@ const Product = ({ product }) => {
           clickHander={handleClick}
           variant={isAddedToCart ? "secondary" : "primary"}
           content={isAddedToCart ? "Remove from Cart" : "Add to cart"}
-          disabled={!totalStock}
+          disabled={!totalStock && !isAddedToCart}
         />
       </div>
     </div>
