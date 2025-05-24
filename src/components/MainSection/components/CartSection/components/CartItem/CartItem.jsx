@@ -59,6 +59,20 @@ const CartItem = ({ item }) => {
     }
   };
 
+  const handleRemove = () => {
+    cartDispatch({
+      type: "removed",
+      productId: product.id,
+    });
+    productsDispatch({
+      type: "changed",
+      product: {
+        ...product,
+        totalStock: cart.find((c) => c.productId === product.id).totalStock,
+      },
+    });
+  };
+
   return (
     <div className="flex items-start space-x-4 pb-4 border-b border-gray-200 mb-4">
       <div className="w-16 h-16 bg-gray-100 rounded flex-shrink-0 flex items-center justify-center">
@@ -67,7 +81,12 @@ const CartItem = ({ item }) => {
       <div className="flex-grow">
         <div className="flex justify-between">
           <ProductTitle text={title} />
-          <span className="text-red-500 text-sm">×</span>
+          <span
+            onClick={handleRemove}
+            className="text-red-500 text-sm cursor-pointer"
+          >
+            ×
+          </span>
         </div>
         {/* size color will also be modified later */}
         <p className="text-sm text-gray-500">Size: Large</p>
