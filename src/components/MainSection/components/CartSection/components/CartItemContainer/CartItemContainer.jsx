@@ -1,13 +1,13 @@
-import { products } from "../../../../../../data/products";
+import initialProducts from "../../../../../../data/initialProducts";
 import CartItem from "../CartItem/CartItem";
 
 const CartItemContainer = () => {
   return (
     <>
       {/* //will be added dynamically */}
-      <CartItem item={products[0]} />
-      <CartItem item={products[1]} />
-      <CartItem item={products[2]} />
+      <CartItem item={initialProducts[0]} />
+      <CartItem item={initialProducts[1]} />
+      <CartItem item={initialProducts[2]} />
     </>
   );
 };

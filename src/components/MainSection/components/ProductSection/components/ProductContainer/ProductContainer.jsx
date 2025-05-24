@@ -1,10 +1,10 @@
-import { products } from "../../../../../../data/products";
+import initialProducts from "../../../../../../data/initialProducts";
 import Product from "../Product/Product";
 
 const ProductContainer = () => {
   return (
     <div className="product-grid">
-      {products.map((p) => (
+      {initialProducts.map((p) => (
         <Product key={p.id} product={p} />
       ))}
     </div>

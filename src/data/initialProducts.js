@@ -1,8 +1,8 @@
-export const products = [
+export const initialProducts = [
   {
     id: 1,
     title: "Classic White Shirt",
-    rating: 4,
+    rating: 14,
     price: 399,
     totalStock: 12,
     addedOn: "2025-05-20",
@@ -12,7 +12,7 @@ export const products = [
   {
     id: 2,
     title: "Denim Jacket",
-    rating: 5,
+    rating: 35,
     price: 499,
     totalStock: 3,
     addedOn: "2025-05-18",
@@ -22,7 +22,7 @@ export const products = [
   {
     id: 3,
     title: "Slim Fit Trousers",
-    rating: 3,
+    rating: 53,
     price: 449,
     totalStock: 7,
     addedOn: "2025-05-15",
@@ -32,7 +32,7 @@ export const products = [
   {
     id: 4,
     title: "Basic Black T-Shirt",
-    rating: 4,
+    rating: 49,
     price: 249,
     totalStock: 20,
     addedOn: "2025-05-19",
@@ -51,7 +51,7 @@ export const products = [
   {
     id: 6,
     title: "Casual Hoodie",
-    rating: 5,
+    rating: 50,
     price: 449,
     totalStock: 15,
     addedOn: "2025-05-13",
@@ -60,7 +60,7 @@ export const products = [
   {
     id: 7,
     title: "Leather Jacket",
-    rating: 5,
+    rating: 15,
     price: 499,
     totalStock: 2,
     addedOn: "2025-05-16",
@@ -80,7 +80,7 @@ export const products = [
   {
     id: 9,
     title: "Formal Blue Shirt",
-    rating: 4,
+    rating: 24,
     price: 374,
     totalStock: 5,
     addedOn: "2025-05-11",
@@ -90,7 +90,7 @@ export const products = [
   {
     id: 10,
     title: "Cotton Shorts",
-    rating: 3,
+    rating: 0,
     price: 249,
     totalStock: 9,
     addedOn: "2025-05-10",
@@ -120,7 +120,7 @@ export const products = [
   {
     id: 13,
     title: "Plain White T-Shirt",
-    rating: 3,
+    rating: 32,
     price: 199,
     totalStock: 22,
     addedOn: "2025-05-20",
@@ -139,7 +139,7 @@ export const products = [
   {
     id: 15,
     title: "Ripped Jeans",
-    rating: 5,
+    rating: 50,
     price: 499,
     totalStock: 11,
     addedOn: "2025-05-07",
@@ -149,7 +149,7 @@ export const products = [
   {
     id: 16,
     title: "Checked Shirt",
-    rating: 3,
+    rating: 0,
     price: 374,
     totalStock: 2,
     addedOn: "2025-05-06",
@@ -159,7 +159,7 @@ export const products = [
   {
     id: 17,
     title: "Corduroy Trousers",
-    rating: 4,
+    rating: 49,
     price: 449,
     totalStock: 4,
     addedOn: "2025-05-05",
@@ -169,7 +169,7 @@ export const products = [
   {
     id: 18,
     title: "Printed T-Shirt",
-    rating: 3,
+    rating: 38,
     price: 299,
     totalStock: 14,
     addedOn: "2025-05-04",
@@ -179,7 +179,7 @@ export const products = [
   {
     id: 19,
     title: "Varsity Jacket",
-    rating: 5,
+    rating: 52,
     price: 499,
     totalStock: 3,
     addedOn: "2025-05-03",
@@ -209,7 +209,7 @@ export const products = [
   {
     id: 22,
     title: "Khaki Shorts",
-    rating: 4,
+    rating: 1,
     price: 249,
     totalStock: 5,
     addedOn: "2025-04-30",
@@ -218,7 +218,7 @@ export const products = [
   {
     id: 23,
     title: "Wool Overcoat",
-    rating: 5,
+    rating: 52,
     price: 499,
     totalStock: 2,
     addedOn: "2025-04-29",
@@ -228,7 +228,7 @@ export const products = [
   {
     id: 24,
     title: "Lightweight Jacket",
-    rating: 4,
+    rating: 34,
     price: 449,
     totalStock: 4,
     addedOn: "2025-04-28",
@@ -238,7 +238,7 @@ export const products = [
   {
     id: 25,
     title: "Sleeveless T-Shirt",
-    rating: 3,
+    rating: 13,
     price: 199,
     totalStock: 16,
     addedOn: "2025-04-27",
@@ -246,3 +246,5 @@ export const products = [
       "https://static-01.daraz.com.bd/p/e07d82ef463b873d21fed8f387cea2ed.jpg",
   },
 ];
+
+export default initialProducts;
