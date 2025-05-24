@@ -1,9 +1,13 @@
+import { useState } from "react";
 import Button from "../../../../../ui/Button/Button";
 import ProductPrice from "../../../../../ui/ProductPrice/ProductPrice";
 import ProductTitle from "../../../../../ui/SectionHeading/ProductTitle/ProductTitle";
 
 const Product = ({ product }) => {
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
   const { title, image, rating, price, totalStock } = product;
+
+  //making an array of rating to dynamically render yello star
   const ratingArr = [];
   for (let i = 0; i < rating; i++) {
     ratingArr.push({ id: i + 1, isRated: true });
@@ -11,6 +15,11 @@ const Product = ({ product }) => {
   for (let i = 0; i < 5 - rating; i++) {
     ratingArr.push({ id: ratingArr.length + 1, isRated: false });
   }
+
+  const handleClick = () => {
+    setIsAddedToCart(!isAddedToCart);
+  };
+
   return (
     <div className="bg-gray-100 rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300">
       <div className="h-48 bg-gray-200 flex items-center justify-center">
@@ -35,9 +44,12 @@ const Product = ({ product }) => {
           <span className="text-xs text-gray-700">{`(${totalStock} pcs left)`}</span>
         </div>
         <ProductPrice price={price} />
-        <Button variant="primary" content="Add to cart" />
-        {/* <Button variant="primary" content="Add to cart" disabled/>
-        <Button variant="secondary" content="Remove from Cart"/> */}
+        <Button
+          clickHander={handleClick}
+          variant={isAddedToCart ? "secondary" : "primary"}
+          content={isAddedToCart ? "Remove from Cart" : "Add to cart"}
+          disabled={!totalStock}
+        />
       </div>
     </div>
   );

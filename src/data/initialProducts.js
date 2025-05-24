@@ -2,7 +2,7 @@ export const initialProducts = [
   {
     id: 1,
     title: "Classic White Shirt",
-    rating: 14,
+    rating: 4,
     price: 399,
     totalStock: 12,
     addedOn: "2025-05-20",
@@ -12,9 +12,9 @@ export const initialProducts = [
   {
     id: 2,
     title: "Denim Jacket",
-    rating: 35,
+    rating: 3,
     price: 499,
-    totalStock: 3,
+    totalStock: 0,
     addedOn: "2025-05-18",
     image:
       "https://27boutique.com/cdn/shop/files/on__15311684__front_740x.jpg?v=1709699996",
@@ -22,9 +22,9 @@ export const initialProducts = [
   {
     id: 3,
     title: "Slim Fit Trousers",
-    rating: 53,
+    rating: 5,
     price: 449,
-    totalStock: 7,
+    totalStock: 57,
     addedOn: "2025-05-15",
     image:
       "https://wearaboutsschoolwear.co.uk/wp-content/uploads/2020/11/Grey-Slim-Fit-Trousers.jpg",
@@ -32,9 +32,9 @@ export const initialProducts = [
   {
     id: 4,
     title: "Basic Black T-Shirt",
-    rating: 49,
+    rating: 4,
     price: 249,
-    totalStock: 20,
+    totalStock: 70,
     addedOn: "2025-05-19",
     image:
       "https://knowledgecottonapparel.com/cdn/shop/products/Regular_fit_Basic_tee-T-shirts-1010113-1300_Black_Jet-5_800x.jpg?v=1676455900",
@@ -44,25 +44,25 @@ export const initialProducts = [
     title: "Beige Chinos",
     rating: 3,
     price: 349,
-    totalStock: 4,
+    totalStock: 41,
     addedOn: "2025-05-14",
     image: "https://4.imimg.com/data4/YH/CP/MY-33145352/chinos-500x500.jpg",
   },
   {
     id: 6,
     title: "Casual Hoodie",
-    rating: 50,
+    rating: 5,
     price: 449,
-    totalStock: 15,
+    totalStock: 0,
     addedOn: "2025-05-13",
     image: "https://m.media-amazon.com/images/I/417RRGuE4WL._AC_UY1000_.jpg",
   },
   {
     id: 7,
     title: "Leather Jacket",
-    rating: 15,
+    rating: 3,
     price: 499,
-    totalStock: 2,
+    totalStock: 20,
     addedOn: "2025-05-16",
     image:
       "https://cdn.aboutstatic.com/file/images/6cc64fcff98710a6c5a5731d41d2b510.jpg",
@@ -72,7 +72,7 @@ export const initialProducts = [
     title: "Oversized T-Shirt",
     rating: 3,
     price: 299,
-    totalStock: 8,
+    totalStock: 38,
     addedOn: "2025-05-12",
     image:
       "https://5.imimg.com/data5/ECOM/Default/2024/8/441041135/VM/UG/XI/8666065/frontprodimg-c78890d1-4658-4b2a-8b51-0490b57aadda-500x500.webp",
@@ -80,7 +80,7 @@ export const initialProducts = [
   {
     id: 9,
     title: "Formal Blue Shirt",
-    rating: 24,
+    rating: 4,
     price: 374,
     totalStock: 5,
     addedOn: "2025-05-11",
@@ -90,9 +90,9 @@ export const initialProducts = [
   {
     id: 10,
     title: "Cotton Shorts",
-    rating: 0,
+    rating: 4,
     price: 249,
-    totalStock: 9,
+    totalStock: 19,
     addedOn: "2025-05-10",
     image:
       "https://images.onlyandsons.com/22024940/4121660/001/onlysons-onsmark0011cottonlinenshortsnoos-grey.jpg?v=d37b6fde970f6d1673fcaa1aa4bff37e",
@@ -120,7 +120,7 @@ export const initialProducts = [
   {
     id: 13,
     title: "Plain White T-Shirt",
-    rating: 32,
+    rating: 2,
     price: 199,
     totalStock: 22,
     addedOn: "2025-05-20",
@@ -132,14 +132,14 @@ export const initialProducts = [
     title: "Cropped Hoodie",
     rating: 4,
     price: 349,
-    totalStock: 5,
+    totalStock: 15,
     addedOn: "2025-05-08",
     image: "https://m.media-amazon.com/images/I/71-+RgxDRRL._AC_SX522_.jpg",
   },
   {
     id: 15,
     title: "Ripped Jeans",
-    rating: 50,
+    rating: 5,
     price: 499,
     totalStock: 11,
     addedOn: "2025-05-07",
@@ -149,7 +149,7 @@ export const initialProducts = [
   {
     id: 16,
     title: "Checked Shirt",
-    rating: 0,
+    rating: 5,
     price: 374,
     totalStock: 2,
     addedOn: "2025-05-06",
@@ -159,9 +159,9 @@ export const initialProducts = [
   {
     id: 17,
     title: "Corduroy Trousers",
-    rating: 49,
+    rating: 4,
     price: 449,
-    totalStock: 4,
+    totalStock: 24,
     addedOn: "2025-05-05",
     image:
       "https://shop.mango.com/assets/rcs/pics/static/T7/fotos/S/77066723_30_B.jpg?imwidth=2048&imdensity=1&ts=1731938725075",
@@ -169,7 +169,7 @@ export const initialProducts = [
   {
     id: 18,
     title: "Printed T-Shirt",
-    rating: 38,
+    rating: 3,
     price: 299,
     totalStock: 14,
     addedOn: "2025-05-04",
@@ -179,9 +179,9 @@ export const initialProducts = [
   {
     id: 19,
     title: "Varsity Jacket",
-    rating: 52,
+    rating: 5,
     price: 499,
-    totalStock: 3,
+    totalStock: 30,
     addedOn: "2025-05-03",
     image:
       "https://www.greats.com/cdn/shop/files/Greats_Bombers_05_03_2325405.jpg?v=1697573960",
@@ -191,7 +191,7 @@ export const initialProducts = [
     title: "Casual Blazer",
     rating: 4,
     price: 399,
-    totalStock: 7,
+    totalStock: 17,
     addedOn: "2025-05-02",
     image:
       "https://renoirfashion.com/cdn/shop/files/2_2fd96f5e-cc18-4f96-aa80-7ba5141d4a27_3024x.jpg?v=1697176368",
@@ -209,18 +209,18 @@ export const initialProducts = [
   {
     id: 22,
     title: "Khaki Shorts",
-    rating: 1,
+    rating: 3,
     price: 249,
-    totalStock: 5,
+    totalStock: 25,
     addedOn: "2025-04-30",
     image: "https://m.media-amazon.com/images/I/61MQ85DzeeL._AC_UY1000_.jpg",
   },
   {
     id: 23,
     title: "Wool Overcoat",
-    rating: 52,
+    rating: 5,
     price: 499,
-    totalStock: 2,
+    totalStock: 21,
     addedOn: "2025-04-29",
     image:
       "https://images.vestiairecollective.com/images/resized/w=1024,h=1024,q=75,f=auto,/produit/42462191-1_2.jpg",
@@ -228,9 +228,9 @@ export const initialProducts = [
   {
     id: 24,
     title: "Lightweight Jacket",
-    rating: 34,
+    rating: 4,
     price: 449,
-    totalStock: 4,
+    totalStock: 34,
     addedOn: "2025-04-28",
     image:
       "https://i5.walmartimages.com/asr/96022c22-b172-47de-88a8-185e35d0bbb7.23786cfd4b12846d625e9b0f9750dd38.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
@@ -238,7 +238,7 @@ export const initialProducts = [
   {
     id: 25,
     title: "Sleeveless T-Shirt",
-    rating: 13,
+    rating: 3,
     price: 199,
     totalStock: 16,
     addedOn: "2025-04-27",
