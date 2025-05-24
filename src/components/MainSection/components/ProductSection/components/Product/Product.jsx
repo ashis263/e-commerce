@@ -1,3 +1,6 @@
+import ProductPrice from "../../../../../ui/ProductPrice/ProductPrice";
+import ProductTitle from "../../../../../ui/SectionHeading/ProductTitle/ProductTitle";
+
 const Product = ({ product }) => {
   const { title, image, rating, price, totalStock } = product;
   const ratingArr = [];
@@ -13,7 +16,7 @@ const Product = ({ product }) => {
         <img src={image} alt={title} className="h-full w-auto object-cover" />
       </div>
       <div className="p-4">
-        <h3 className="font-medium">{title}</h3>
+        <ProductTitle text={title} />
         <div className="flex items-center justify-between">
           <div className="flex items-center my-1">
             <div className="flex text-yellow-400">
@@ -30,7 +33,7 @@ const Product = ({ product }) => {
           </div>
           <span className="text-xs text-gray-700">{`(${totalStock} pcs left)`}</span>
         </div>
-        <p className="font-bold">${price}</p>
+        <ProductPrice price={price} />
         <button className="w-full mt-2 bg-red-800 py-1 text-gray-100 rounded flex items-center justify-center">
           Remove from Cart
         </button>
