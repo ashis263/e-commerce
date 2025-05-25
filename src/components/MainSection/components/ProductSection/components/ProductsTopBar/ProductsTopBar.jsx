@@ -18,7 +18,7 @@ const ProductsTopBar = () => {
           onChange={handleSort}
           className="border rounded-md px-2 py-1 text-sm"
         >
-          <option disabled selected></option>
+          <option disabled selected>Select sorting option</option>
           <option value="most-popular">Most Popular</option>
           <option value="newest">Newest</option>
           <option value="lowToHigh">Price: Low to High</option>

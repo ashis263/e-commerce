@@ -16,7 +16,7 @@ const CartItem = ({ item }) => {
   const products = useProducts();
   const productsDispatch = useProductsDispatch();
 
-  const { productId, title, image, price, quantity } = item;
+  const { productId, title, image, price, quantity, size, color } = item;
 
   const product = products.find((p) => p.id === productId);
   const initialStock = cart.find((c) => c.productId === productId).totalStock;
@@ -69,6 +69,8 @@ const CartItem = ({ item }) => {
       product: {
         ...product,
         totalStock: cart.find((c) => c.productId === product.id).totalStock,
+        //after removing from cart we will set isAddedToCart property in the product with a falsy value
+        isAddedToCart: false,
       },
     });
   };
@@ -89,8 +91,8 @@ const CartItem = ({ item }) => {
           </span>
         </div>
         {/* size color will also be modified later */}
-        <p className="text-sm text-gray-500">Size: Large</p>
-        <p className="text-sm text-gray-500">Color: White</p>
+        <p className="text-sm text-gray-500">Size: {size}</p>
+        <p className="text-sm text-gray-500">Color: {color}</p>
         <div className="flex justify-between items-center mt-2">
           <ProductPrice price={quantity * price} />
           <div className="flex items-center space-x-2">

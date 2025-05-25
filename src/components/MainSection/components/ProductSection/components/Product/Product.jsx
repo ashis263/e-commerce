@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Button from "../../../../../ui/Button/Button";
 import ProductPrice from "../../../../../ui/ProductPrice/ProductPrice";
 import ProductTitle from "../../../../../ui/SectionHeading/ProductTitle/ProductTitle";
@@ -11,8 +10,6 @@ import { useProductsDispatch } from "../../../../../../contexts/ProductsContext"
 import findNextId from "../../../../../../utils/findNextId";
 
 const Product = ({ product }) => {
-  const [isAddedToCart, setIsAddedToCart] = useState(false);
-
   const cart = useCart();
   const cartDispatch = useCartDispatch();
   const productsDispatch = useProductsDispatch();
@@ -20,8 +17,8 @@ const Product = ({ product }) => {
   const { id, title, image, rating, price, totalStock } = product;
 
   const handleClick = () => {
-    setIsAddedToCart(!isAddedToCart);
-    if (!isAddedToCart) {
+    //if product doesn't have a truthy isAddedToCart value, we will add to cart else we will remove from cart 
+    if (!product?.isAddedToCart) {
       cartDispatch({
         type: "added",
         product: {
@@ -36,6 +33,8 @@ const Product = ({ product }) => {
         product: {
           ...product,
           totalStock: totalStock - 1,
+          //after adding to cart we will add a isAddedToCart property in the product with a truthy value
+          isAddedToCart: true,
         },
       });
     } else {
@@ -48,6 +47,8 @@ const Product = ({ product }) => {
         product: {
           ...product,
           totalStock: cart.find((c) => c.productId === id).totalStock,
+          //after removing from cart we will set isAddedToCart property in the product with a falsy value
+          isAddedToCart: false,
         },
       });
     }
@@ -67,9 +68,9 @@ const Product = ({ product }) => {
         <ProductPrice price={price} />
         <Button
           clickHander={handleClick}
-          variant={isAddedToCart ? "secondary" : "primary"}
-          content={isAddedToCart ? "Remove from Cart" : "Add to cart"}
-          disabled={!totalStock && !isAddedToCart}
+          variant={product?.isAddedToCart ? "secondary" : "primary"}
+          content={product?.isAddedToCart ? "Remove from Cart" : "Add to cart"}
+          disabled={!totalStock && !product?.isAddedToCart}
         />
       </div>
     </div>
